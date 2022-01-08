@@ -45,7 +45,7 @@ class Tarefa{
   public string GetDescricao(){
 	  return descricao;
   }
-  public int SetQtd_func_nec(){
+  public int GetQtd_func_nec(){
     return qtd_func_nec;
   }
   public Setor GetSetor(){

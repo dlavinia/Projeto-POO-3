@@ -12,8 +12,12 @@ class Program {
     switch(opc){
       case 1: SetorListar(); break;
       case 2: SetorInserir(); break;
-      case 3: TarefaListar(); break;
-      case 4: TarefaInserir(); break;
+      case 3: SetorAtualizar(); break;
+      case 4: SetorExcluir(); break;
+      case 5: TarefaListar(); break;
+      case 6: TarefaInserir(); break;
+      case 7: TarefaAtualizar(); break;
+      case 8: TarefaExcluir(); break;
       }
     } catch (Exception erro){
       Console.WriteLine(erro.Message);
@@ -31,8 +35,13 @@ class Program {
     Console.WriteLine("----------------------------------");
     Console.WriteLine("1 - Listar Setores");
     Console.WriteLine("2 - Inserir Setor");
-    Console.WriteLine("3 - Listar Tarefas");
-    Console.WriteLine("4 - Inserir Tarefa");
+    Console.WriteLine("3 - Atualizar Setor");
+    Console.WriteLine("4 - Exluir Setor");
+    Console.WriteLine("5 - Listar Tarefas");
+    Console.WriteLine("6 - Inserir Tarefa");
+    Console.WriteLine("7 - Atualizar Tarefa");
+    Console.WriteLine("8 - Exluir Tarefa");
+
     Console.WriteLine("0 - Finalizar");
     Console.WriteLine("Infrome uma opção:");
     int opc = int.Parse(Console.ReadLine());
@@ -51,18 +60,7 @@ class Program {
       Console.WriteLine();
   }
 
-  public static void TarefaListar(){
-    Console.WriteLine("----- TODAS AS TAREFAS  -----");
-    Tarefa[] tarefas = ntarefa.Listar();
-    if (tarefas.Length == 0){
-	    Console.WriteLine("Nenhuma tarefa cadastrada");
-	    return;
-    }
-    foreach(Tarefa t in tarefas) Console.WriteLine(t);
-      Console.WriteLine();
-  }
-
-   public static void SetorInserir(){
+  public static void SetorInserir(){
     Console.WriteLine("----- INSERIR SETOR -----");
     Console.Write("Código: " );
     int id = int.Parse(Console.ReadLine());
@@ -73,6 +71,22 @@ class Program {
 
     nsetor.Inserir(s);
     Console.WriteLine("Setor cadastrado com sucesso!");
+  }
+  public static void SetorAtualizar(){
+
+  }
+  public static void SetorExcluir(){
+
+  }
+  public static void TarefaListar(){
+    Console.WriteLine("----- TODAS AS TAREFAS  -----");
+    Tarefa[] tarefas = ntarefa.Listar();
+    if (tarefas.Length == 0){
+	    Console.WriteLine("Nenhuma tarefa cadastrada");
+	    return;
+    }
+    foreach(Tarefa t in tarefas) Console.WriteLine(t);
+      Console.WriteLine();
   }
 
   public static void TarefaInserir(){
@@ -96,9 +110,14 @@ class Program {
     ntarefa.Inserir(t);
 
     Console.WriteLine("Tarefa cadastrada com sucesso!");
-}
+  }
 
+  public static void TarefaAtualizar(){
+    
+  }
+  public static void TarefaExcluir(){
 
+  }
 }
 
 
