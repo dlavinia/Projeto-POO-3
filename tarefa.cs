@@ -48,6 +48,9 @@ class Tarefa{
   public int SetQtd_func_nec(){
     return qtd_func_nec;
   }
+  public Setor GetSetor(){
+     return setor;
+  }
 public override string ToString(){
   if (this.setor == null){
 	return id +" - "+ titulo +" - "+ descricao +" - "+ qtd_func_nec;
