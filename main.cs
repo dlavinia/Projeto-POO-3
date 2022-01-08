@@ -1,6 +1,7 @@
 using System;
 
 class Program {
+  private static NSetor nsetor = new NSetor();
   public static void Main (string[] args) {
   int opc = 0;
   Console.WriteLine("----- ORGANIZADOR DE TAREFAS -----");
@@ -24,7 +25,7 @@ class Program {
 
   public static int Menu(){
 	  Console.WriteLine();
-    Console.WriteLine("---------------------");
+    Console.WriteLine("----------------------------------");
     Console.WriteLine("1 - Listar Setores");
     Console.WriteLine("2 - Inserir Setor");
     Console.WriteLine("0 - Finalizar");
@@ -36,11 +37,26 @@ class Program {
 
   public static void SetorListar(){
     Console.WriteLine("----- TODOS OS SETORES -----");
-}
+    Setor[] setores = nsetor.Listar();
+    if (setores.Length == 0){
+	    Console.WriteLine("Nenhum setor cadastrado");
+	    return;
+    }
+    foreach(Setor s in setores) Console.WriteLine(s);
+      Console.WriteLine();
+  }
 
   public static void SetorInserir(){
     Console.WriteLine("----- INSERIR SETOR -----");
+    Console.Write("Código: " );
+    int id = int.Parse(Console.ReadLine());
+    Console.Write("Descrição: ");
+    string descricao = Console.ReadLine();
 
+    Setor s = new Setor(id, descricao);
+
+    nsetor.Inserir(s);
+    Console.WriteLine("Setor cadastrado com sucesso!");
 }
 
 
